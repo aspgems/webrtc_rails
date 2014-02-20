@@ -1,1 +1,6 @@
 <h1>Crear sala de reunión</h1>
+
+<%= form_tag '/meetings/rooms', method: :post do %>
+  <%= text_field_tag :name %>
+  <%= submit_tag %>
+<% end %>

@@ -1,3 +1,3 @@
 WebrtcRails::Engine.routes.draw do
-  resources :rooms, only: [:new, :show]
+  resources :rooms, only: [:new, :create, :show]
 end
