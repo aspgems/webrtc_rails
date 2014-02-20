@@ -1,3 +1,3 @@
 WebrtcRails::Engine.routes.draw do
-  resources :videoconfs, only: [:show]
+  resources :rooms, only: [:new, :show]
 end

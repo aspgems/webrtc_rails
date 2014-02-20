@@ -1,4 +1,3 @@
-module WebrtcRails
-  class ApplicationController < ActionController::Base
-  end
+class WebrtcRails::ApplicationController < ApplicationController
+  layout 'application'
 end

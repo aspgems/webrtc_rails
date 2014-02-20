@@ -1,7 +1,10 @@
 require_dependency "webrtc_rails/application_controller"
 
 module WebrtcRails
-  class VideoconfsController < ApplicationController
+  class RoomsController < ApplicationController
+    def new
+    end
+
     def show
       @name = params[:id]
     end
