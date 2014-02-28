@@ -16,7 +16,8 @@ module WebrtcRails
     end
 
     def initialize(attributes = {})
-      @attributes = attributes.merge(slug: URI.escape(name).parameterize)
+      attributes.merge(slug: URI.escape(name).parameterize) unless name.nil?
+      @attributes = attributes
     end
 
     def to_param
