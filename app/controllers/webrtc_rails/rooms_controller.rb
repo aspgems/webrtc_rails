@@ -2,21 +2,30 @@ require_dependency "webrtc_rails/application_controller"
 
 module WebrtcRails
   class RoomsController < ApplicationController
+
     def new
+      @room = Room.new
     end
 
     def create
-      redirect_to room_path(room_params)
+      @room = Room.new(room_params)
+
+      if @room.valid?
+        redirect_to room_path(@room)
+      else
+        render :new
+      end
     end
 
     def show
-      @name = params[:id]
+      @room = Room.new(name: params[:id])
     end
 
     private
 
     def room_params
-      URI.escape(params.require(:name)).parameterize
+      params.require(:room).permit(:name).permit(:name)
     end
+
   end
 end

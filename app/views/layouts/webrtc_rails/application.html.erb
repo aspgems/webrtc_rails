@@ -10,5 +10,9 @@
 
 <%= yield %>
 
+<%= javascript_tag do %>
+  Room.initialize('localVideo', 'remotesVideos');
+<% end %>
+
 </body>
 </html>

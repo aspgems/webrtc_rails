@@ -1,6 +1,15 @@
 <h1>Crear sala de reunión</h1>
 
-<%= form_tag '/meetings/rooms', method: :post do %>
-  <%= text_field_tag :name %>
-  <%= submit_tag %>
+<%= form_for @room, url: rooms_path, method: :post do |f| %>
+
+  <% if @room.errors.any? %>
+    <div class="errors">
+      <% @room.errors.messages.each do |error| %>
+        <%= error.first %>: <%= error.last.join(', ') %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <%= f.text_field :name %>
+  <%= f.submit %>
 <% end %>
