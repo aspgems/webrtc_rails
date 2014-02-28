@@ -1,0 +1,4 @@
+es:
+  webrtc_rails:
+    errors:
+      parameterizable: No es válido
