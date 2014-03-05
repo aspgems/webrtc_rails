@@ -4,19 +4,15 @@
 var Room = {
   initialize: function(local, remotes){
     if ($('#'+local).size() <= 0 || $('#'+remotes).size() <= 0) { return false; }
-    this.webrtc = new SimpleWebRTC({
-      // the id/element dom element that will hold "our" video
+
+    var webrtc = new SimpleWebRTC({
       localVideoEl: local,
-      // the id/element dom element that will hold remote videos
       remoteVideosEl: remotes,
-      // immediately ask for camera access
       autoRequestMedia: true
     });
 
-    // we have to wait until it's ready
-    this.webrtc.on('readyToCall', function () {
-      // you can name it anything
-      webrtc.joinRoom('your awesome room name');
+    webrtc.on('readyToCall', function () {
+      webrtc.joinRoom($('h1').html());
     });
   }
 }
