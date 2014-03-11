@@ -1,4 +1,7 @@
 <h1><%= title @room.name %></h1>
+<p>Para invitar a alguien a esta sala pasale la siguiente url: <%= content_tag :i, room_url(@room) %></p>
+
+<button id="screenShareButton"></button>
 
 <div id="remotesVideos" style="width:100%">
 </div>
