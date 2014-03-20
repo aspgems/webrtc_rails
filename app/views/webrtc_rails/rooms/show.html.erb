@@ -1,7 +1,7 @@
-<h1><%= title @room.name %></h1>
-<p>Para invitar a alguien a esta sala pasale la siguiente url: <%= content_tag :i, room_url(@room) %></p>
+<h1><%= @room.name %></h1>
+<p>Para invitar a alguien a esta sala pasale la siguiente url: <%= link_to room_url(@room), room_url(@room) %></p>
 
-<button id="screenShareButton"></button>
+<button id="screenShareButton">Share Screen</button>
 
 <div id="remotesVideos" style="width:100%">
 </div>
@@ -9,3 +9,7 @@
 <div class="botombar" style="height:100px; width:100%; margin:1em">
   <video id="localVideo" style="height:100px"></video>
 </div>
+
+<% content_for :javascripts do %>
+  Room.initialize("<%= @room.name %>");
+<% end %>
