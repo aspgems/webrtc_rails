@@ -95,3 +95,20 @@ var Room = {
     }
   }
 };
+
+getUserMedia(function(err, stream) {
+  if (err) throw err
+
+    var options = {};
+    var speechEvents = hark(stream, options);
+
+    speechEvents.on('speaking', function() {
+      console.log('speaking');
+      $('#localVideo').css({height:"300px"});
+    });
+
+    speechEvents.on('stopped_speaking', function() {
+      console.log('stopped_speaking');
+      $('#localVideo').css({height:"100px"});
+    });
+});

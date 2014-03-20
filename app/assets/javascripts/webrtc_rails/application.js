@@ -12,4 +12,6 @@
 //
 //= require jquery
 //= require webrtc_rails/simplewebrtc
+//= require webrtc_rails/getusermedia
+//= require webrtc_rails/hark
 //= require_tree .
