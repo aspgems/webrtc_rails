@@ -7,6 +7,9 @@
 </head>
 <body>
 <%= yield %>
+
+<%= javascript_include_tag :jquery %>
+<%= javascript_include_tag 'webrtc_rails/application' %>
 <% if content_for? :javascript %>
   <%= yield :javascript %>
 <% end %>

@@ -1,4 +1,4 @@
-<h1>EO: <%= @room.name %></h1>
+<h1><%= @room.name %></h1>
 <p>Para invitar a alguien a esta sala pasale la siguiente url: <%= link_to room_url(@room), room_url(@room) %></p>
 
 <button id="screenShareButton">Share Screen</button>
@@ -11,7 +11,6 @@
 </div>
 
 <% content_for :javascript do %>
-  <%= javascript_include_tag 'webrtc_rails/application' %>
   <%= javascript_tag do %>
     Room.initialize("<%= @room.name %>");
   <% end %>

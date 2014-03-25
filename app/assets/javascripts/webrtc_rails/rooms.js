@@ -96,6 +96,7 @@ var Room = {
   }
 };
 
+/*
 getUserMedia(function(err, stream) {
   if (err) throw err
 
@@ -112,3 +113,4 @@ getUserMedia(function(err, stream) {
       $('#localVideo').css({height:"100px"});
     });
 });
+*/

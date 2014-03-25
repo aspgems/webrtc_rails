@@ -10,7 +10,6 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
 //= require webrtc_rails/simplewebrtc
 //= require webrtc_rails/getusermedia
 //= require webrtc_rails/hark
