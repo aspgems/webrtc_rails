@@ -12,6 +12,13 @@ var Room = {
     this.webrtc.on('videoRemoved', this.videoRemoved.bind(this));
     this.webrtc.on('volumeChange', this.volumeChange.bind(this));
     this.webrtc.on('localScreenRemoved', this.localScreenRemoved.bind(this));
+
+    this.stopButton = $('#stopVideoButton');
+    this.stopButton.click(this.stop.bind(this));
+
+    this.muteButton = $('#muteButton');
+    this.muteButton.click(this.mute.bind(this));
+
     this.shareButton = $('#screenShareButton');
     this.shareButton.click(this.share.bind(this));
     this.setShareButton(true);
@@ -72,6 +79,24 @@ var Room = {
   },
   volumeChange: function (volume, treshold) {
     this.showVolume(document.getElementById('localVolume'), volume);
+  },
+  stop: function(){
+    if (this.stopButton.text() == 'Stop'){
+      this.webrtc.pause();
+      this.stopButton.text("Resume");
+    } else {
+      this.webrtc.resume();
+      this.stopButton.text("Stop");
+    }
+  },
+  mute: function(){
+    if (this.muteButton.text() == 'Mute'){
+      this.webrtc.mute();
+      this.muteButton.text("Unmute");
+    } else {
+      this.webrtc.unmute();
+      this.muteButton.text("Mute");
+    }
   },
   localScreenRemoved: function(){
     this.shareButton.set(true);
